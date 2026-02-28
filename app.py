@@ -369,7 +369,30 @@ html, body, [data-testid="stAppViewContainer"] {
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--border-glow); }
+/* ── Sidebar Radio Options — texte blanc ── */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label p {
+    color: #ffffff !important;
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:hover p {
+    color: var(--accent-cyan) !important;
+}
+
 #MainMenu, footer, header { visibility: hidden; }
+
+/* ── Sidebar nav labels white ── */
+[data-testid="stSidebar"] [data-testid="stRadio"] label,
+[data-testid="stSidebar"] [data-testid="stRadio"] label p,
+[data-testid="stSidebar"] [data-testid="stRadio"] div[data-testid="stMarkdownContainer"] p {
+    color: #ffffff !important;
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -386,7 +409,7 @@ with st.sidebar:
     <div class="sidebar-logo">
         <span class="icon">🛡️</span>
         <div class="name">Fraud<span>Shield</span></div>
-        <div class="ver">v2.0 · ML-Powered</div>
+        
     </div>
     """, unsafe_allow_html=True)
 
@@ -399,10 +422,14 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("""
-    <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:#2a4a7a;letter-spacing:2px;text-transform:uppercase;line-height:2.2">
-    Model: LightGBM<br>
-    Engine: Geodesic<br>
-    Status: <span style="color:#00f5a0">●</span> Online
+    <div style="padding:0.99rem 0">
+        <div style="font-family:'Rajdhani',sans-serif;font-size:0.75rem;font-weight:700;color:#1e7cf5;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.7rem">
+            🔵 About this App
+        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:0.78rem;color:#7a9cc4;line-height:1.8">
+            FraudShield uses a <b style="color:#e8f0fe">LightGBM</b> machine learning model to detect fraudulent bank transactions in real time.<br><br>
+            It analyzes key signals such as transaction amount, merchant category, geolocation distance, and time patterns to classify each transaction as <b style="color:#00f5a0">legitimate</b> or <b style="color:#ff3d6b">fraudulent</b>.
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -505,7 +532,7 @@ if "Single" in page:
         else:
             st.error("⚠️  Please fill all required fields before running the analysis.")
 
-    st.markdown('<div class="footer">FraudShield v2.0 · Powered by LightGBM · All data processed locally</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">FraudShield v1 · Powered by LightGBM </div>', unsafe_allow_html=True)
 
 
 # ════════════════════════════════════════════════════════════════════════════════
@@ -723,4 +750,4 @@ else:
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown('<div class="footer">FraudShield v2.0 · Powered by LightGBM · All data processed locally</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">FraudShield v1 · Powered by LightGBM · </div>', unsafe_allow_html=True)
